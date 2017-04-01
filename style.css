@@ -34,6 +34,7 @@ body {
 
 #centercenter {
 	height:98%;
+	object-position: center;
 }
 
 #bottom {
@@ -49,12 +50,9 @@ body {
 	width:50%;
 	height:100%;
 	float: left;
-
 }
 #right {
 	width:25%;
 	height:100%;
 	float:left;
-}
-#leftTop {
 }
