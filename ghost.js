@@ -24,3 +24,26 @@
             return valString;
         }
     }
+
+var number = updatePercentage();
+
+function updatePercentage() {
+    var xmlhttp = new XMLHttpRequest();
+
+    xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == XMLHttpRequest.DONE ) {
+           if (xmlhttp.status == 200) {
+               number = xmlhttp.responseText;
+           }
+           else if (xmlhttp.status == 400) {
+              	number = "50";
+           }
+           else {
+               number = "50";
+           }
+        }
+    };
+
+    xmlhttp.open("GET", "/Hackday/Ennuste/Ennuste.php", true);
+    xmlhttp.send();
+}
