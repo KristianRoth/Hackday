@@ -26,12 +26,16 @@ body {
 	width:60%;
 	float:left;
 	height: 100%;
-	margin: 10px;
+	margin: 10px 0px 10px 10px;
 }
 #topRight {
 	width: 35%;
 	float: right;
 	height: 100%;
+	font-family: comic;
+	font-weight: bold;
+	font-size: 40px;
+	padding-left:10px;
 }
 
 #centercenter {
@@ -80,4 +84,14 @@ body {
     height: 80%;
     width: auto;
     padding-top: 35px;
+}
+
+label {
+	font-family: comic;
+	font-size: 60px;
+}
+
+h1 {
+	font-size: 30px;
+	text-align: center;
 }

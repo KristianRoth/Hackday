@@ -1,7 +1,7 @@
     var minutesLabel = document.getElementById("minutes");
     var secondsLabel = document.getElementById("seconds");
     var hoursLabel    = document.getElementById("hours");
-    var totalSeconds = 3600*25*4-10;
+    var totalSeconds = 0;
     setInterval(setTime, 1000);
 
     function setTime()
