@@ -56,3 +56,17 @@ body {
 	height:100%;
 	float:left;
 }
+
+#logo {
+	max-width: 15%;
+	width: auto;
+	height: 100%;
+	float: left;
+}
+
+#name {
+	max-width: 80%;
+	height: 100%;
+	width: auto;
+	float: left;
+}
