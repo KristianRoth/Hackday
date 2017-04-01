@@ -76,6 +76,7 @@ body {
 	height: 100%;
 	width: auto;
 	float: left;
+	margin-left: 20px;
 }
 
 #imgcenter {
