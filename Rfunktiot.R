@@ -1,30 +1,54 @@
-#Käytettävät kirjastot
-library(ggplot2)
-library(ggthemes)
+#Libraries to use
+library(RJSONIO)
+library(RCurl)
+
+# RFIDdata ----------------------------------------------------------------
+
+
+h = basicTextGatherer()
+curlPerform(url = "http://ec2-34-252-32-133.eu-west-1.compute.amazonaws.com/Hackday/rfid.php", 
+            writefunction = h$update)
+h$value()
+
+data <- t(data.frame(fromJSON(h$value())))
+row.names(data) <- c(1:nrow(data))
+RFIDdataFrame <- data.frame(data, stringsAsFactors = F)
+
+RFIDdataFrame[,1] <- as.POSIXct(round(as.numeric(RFIDdataFrame[,1])/1000,0),
+                          tz=Sys.timezone(),
+                          origin = '1970-01-01 00:00.00 EEST')
 
 
 
-set.seed(322)
-
-# Kummitukset vs kellonaika -----------------------------------------------
-aika <- sample(24,1000,T, prob=c(runif(1),2,4,3,2,runif(19)))
-qplot(aika, geom="histogram", bins=24) +
-  theme_few() +
-  labs(x = "Aika", y = "Kummitusten määrä")
-  
-
-# Aikasarja kummituksista -------------------------------------------------
-päivä <- sample(seq(as.Date('2017/01/01'), as.Date('2017/03/31'), by="day"),
-                1000,
-                T,
-                prob = c(runif(50),4, runif(39)))
+# Movementdata ------------------------------------------------------------
 
 
-ggplot(data.frame(päivä), aes(x=päivä)) +
-  scale_x_date(päivä, date_labels = "%b %d") +
-  geom_line(stat="count") +
-  theme_few() +
-  labs(x = "Päivämäärä", y = "Havaittujen kummitusten määrä")
+h = basicTextGatherer()
+curlPerform(url = "http://ec2-34-252-32-133.eu-west-1.compute.amazonaws.com/Hackday/movement.php", 
+            writefunction = h$update)
+h$value()
+
+data <- t(data.frame(fromJSON(h$value())))
+row.names(data) <- c(1:nrow(data))
+MovementdataFrame <- data.frame(data, stringsAsFactors = F)
+
+MovementdataFrame[,1] <- as.POSIXct(round(as.numeric(MovementdataFrame[,1])/1000,0),
+                                tz=Sys.timezone(),
+                                origin = '1970-01-01 00:00.00 EEST')
 
 
 
+# Bluetoothdata -----------------------------------------------------------
+
+
+h = basicTextGatherer()
+curlPerform(url = "http://ec2-34-252-32-133.eu-west-1.compute.amazonaws.com/Hackday/bluetooth.php", 
+            writefunction = h$update)
+h$value()
+data <- fromJSON(h$value())
+data <- data.frame(t(sapply(data,c)))
+BluetoothdataFrame <- data.frame(data, stringsAsFactors = F)
+
+BluetoothdataFrame[,1] <- as.POSIXct(round(as.numeric(BluetoothdataFrame[,1])/1000,0),
+                                    tz=Sys.timezone(),
+                                    origin = '1970-01-01 00:00.00 EEST')
