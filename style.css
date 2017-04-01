@@ -15,12 +15,15 @@ body {
 #top {
 	width: 100%;
 	height: 200px;
+	margin-top: 10px;
+	margin-bottom: 20px;
 }
 
 #topLeft {
 	width:60%;
 	float:left;
 	height: 100%;
+	margin: 10px;
 }
 #topRight {
 	width: 35%;
