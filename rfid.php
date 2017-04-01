@@ -23,7 +23,7 @@ foreach ($response['Items'] as $key => $value) {
 	$value = json_decode($marshaler->unmarshalJson($value));
 
 	$item['timestamp'] = $value->timestamp;
-	$item['token'] = $value->data->current->state->reported->token;
+	$item['token'] = $value->data->state->reported->token;
 	if ($item['token']) {
 		$data[] = $item;
 	}
