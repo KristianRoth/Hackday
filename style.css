@@ -32,10 +32,11 @@ body {
 	width: 35%;
 	float: right;
 	height: 100%;
-	font-family: comic serif;
+	font-family: serif;
 	font-weight: bold;
 	font-size: 40px;
 	padding-left:10px;
+	text-align: center;
 }
 
 #centercenter {
@@ -87,7 +88,7 @@ body {
 }
 
 label {
-	font-family: comic serif;
+	font-family: serif;
 	font-size: 60px;
 }
 
