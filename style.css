@@ -1,0 +1,56 @@
+.greyBox {
+	background-color: #6c6c6c;
+}
+
+body {
+	background-color: #bbbbbb;
+}
+
+.square {
+	width:100%;
+	height:50%;
+}
+
+#top {
+	width: 100%;
+	height: 200px;
+}
+
+#topLeft {
+	width:69%;
+	float:left;
+	height: 100%;
+}
+#topRight {
+	width: 30%;
+	float: left;
+	height: 100%;
+}
+
+#centercenter {
+	width:100%;
+	height:100%;
+}
+
+#bottom {
+	width:100%;
+	height:550px;
+}
+#left {
+	width:24%;
+	height:100%;
+	float: left;
+}
+#center {
+	width:47%;
+	height:100%;
+	float: left;
+
+}
+#right {
+	width:24%;
+	height:100%;
+	float:left;
+}
+#leftTop {
+}
