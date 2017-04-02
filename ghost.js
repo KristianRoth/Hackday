@@ -35,7 +35,13 @@ function updatePercentage() {
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == XMLHttpRequest.DONE ) {
            if (xmlhttp.status == 200) {
-               number = xmlhttp.responseText;
+               var temp = xmlhttp.responseText;
+               if (temp == "movement detected") {
+                    updatePage(2);
+                    setTimeout(checkrfid, 30000);
+               } else {
+                    number = temp;
+               }
            }
            else if (xmlhttp.status == 400) {
               	number = "50";
@@ -47,6 +53,32 @@ function updatePercentage() {
     };
 
     xmlhttp.open("GET", "/Hackday/Ennuste/Ennuste.php", true);
+    xmlhttp.send();
+}
+
+function checkrfid() {
+    var xmlhttp = new XMLHttpRequest();
+
+    xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == XMLHttpRequest.DONE ) {
+           if (xmlhttp.status == 200) {
+               result = xmlhttp.responseText;
+               if (result == "ghost") {
+                    updatePage(0);
+               } else {
+                    updatePage(1);
+               }
+           }
+           else if (xmlhttp.status == 400) {
+                
+           }
+           else {
+               
+           }
+        }
+    };
+
+    xmlhttp.open("GET", "/Hackday/Aika/Aika.php", true);
     xmlhttp.send();
 }
 
