@@ -11,7 +11,7 @@ row.names(data) <- c(1:nrow(data))
 RFIDdataFrame <- data.frame(data, stringsAsFactors = F)
 
 RFIDdataFrame[,1] <- as.POSIXct(round(as.numeric(RFIDdataFrame[,1])/1000,0),
-                                tz=Sys.timezone(),
+                                tz="UTC",
                                 origin = '1970-01-01 00:00.00 EEST')
 
 
