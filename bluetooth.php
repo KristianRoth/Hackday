@@ -12,8 +12,10 @@ $dynamodb = $sdk->createDynamoDb();
 
 $response = $dynamodb->query([
 	'TableName'=>'IoTData',
-	'KeyConditionExpression' => 'deviceName = :v1',
-	'ExpressionAttributeValues' => [':v1' => ['S' => 'Bluetooth1']]
+	'KeyConditionExpression' => 'deviceName = :v1 AND #timestamp > :vtime' ,
+	'ExpressionAttributeNames' => ["#timestamp" => "timestamp"],
+	'ExpressionAttributeValues' => [':v1' => ['S' => 'Bluetooth1'],
+									':vtime' => ['S' => '1491122853825']]
 ]);
 $marshaler = new Aws\DynamoDb\Marshaler();
 
