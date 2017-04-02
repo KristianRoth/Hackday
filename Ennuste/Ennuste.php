@@ -1,5 +1,4 @@
 <?php
-exec('Rscript --vanilla ../Kuvaajat/barPlotUpdating.R');
 exec('Rscript --vanilla Ennuste.R', $result);
 $chance = $result[0];
 
