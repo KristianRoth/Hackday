@@ -1,5 +1,5 @@
 <?php
-exec('Rscript --vanilla Ennuste.R', $result);
+exec('Rscript --vanilla annaArvo.R', $result);
 $chance = $result[0];
 
 if (getIsMovement()) {
