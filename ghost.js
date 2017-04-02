@@ -56,7 +56,7 @@ function getTime() {
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == XMLHttpRequest.DONE ) {
            if (xmlhttp.status == 200) {
-               totalSeconds = xmlhttp.responseText;
+               totalSeconds = parseInt(xmlhttp.responseText);
            }
            else if (xmlhttp.status == 400) {
                 totalSeconds = 0;
