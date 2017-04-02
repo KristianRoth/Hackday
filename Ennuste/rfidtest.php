@@ -2,6 +2,7 @@
 
 require('../Aws/aws-autoloader.php');
 if(getRfid()) {
+	file_put_contents('../Aika/lasttime.txt', '0');
 	echo "ghost";
 } else {
 	echo "no ghost";
