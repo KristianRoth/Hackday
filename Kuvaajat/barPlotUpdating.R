@@ -21,7 +21,7 @@ p <- ggplot(RFIDplotData, aes(x=as.factor(time),fill=as.factor(1) )) +
   geom_bar() +
   scale_fill_manual(values=c("#9C3636")) +
   labs(x="", y="")+
-  scale_x_discrete(breaks=c(5,10,15,20))+
+  scale_x_continuous(breaks=c(5,10,15,20))+
   theme(legend.position="none",
         axis.text.x  = element_text(size=26, colour = "black"),
         axis.text.y  = element_text(size=26, colour = "black"),
