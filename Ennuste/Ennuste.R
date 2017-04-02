@@ -1,5 +1,5 @@
 #!/usr/bin/env Rscript
-fileConn<-file("values.txt")
+fileConn<-file("/var/www/html/Hackday/Ennuste/values.txt")
 pred <- readLines(fileConn)
 pred <- list(ennuste = as.numeric(pred[1]), muutos = as.numeric(pred[2]))
 muutos <- rnorm(1,pred$muutos/2,0.03)
