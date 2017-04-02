@@ -78,7 +78,7 @@ function checkrfid() {
         }
     };
 
-    xmlhttp.open("GET", "/Hackday/Aika/Aika.php", true);
+    xmlhttp.open("GET", "/Hackday/Ennuste/rfidtest.php", true);
     xmlhttp.send();
 }
 
