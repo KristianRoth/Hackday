@@ -1,4 +1,6 @@
 library(ggplot2)
+library(RJSONIO)
+library(RCurl)
 # RFIDdata ----------------------------------------------------------------
 h = basicTextGatherer()
 curlPerform(url = "http://ec2-34-252-32-133.eu-west-1.compute.amazonaws.com/Hackday/rfid.php", 
