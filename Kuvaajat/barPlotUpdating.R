@@ -1,12 +1,11 @@
 library(ggplot2)
 library(RJSONIO)
 library(RCurl)
+library(bitops)
 # RFIDdata ----------------------------------------------------------------
 h = basicTextGatherer()
 curlPerform(url = "http://ec2-34-252-32-133.eu-west-1.compute.amazonaws.com/Hackday/rfid.php", 
             writefunction = h$update)
-h$value()
-
 data <- t(data.frame(fromJSON(h$value())))
 row.names(data) <- c(1:nrow(data))
 RFIDdataFrame <- data.frame(data, stringsAsFactors = F)
@@ -22,7 +21,7 @@ p <- ggplot(RFIDplotData, aes(x=as.factor(time),fill=as.factor(1) )) +
   geom_bar() +
   scale_fill_manual(values=c("#9C3636")) +
   labs(x="", y="")+
-  scale_x_discrete(breaks=c(10,15,20))+
+  scale_x_discrete(breaks=c(5,10,15,20))+
   theme(legend.position="none",
         axis.text.x  = element_text(size=26, colour = "black"),
         axis.text.y  = element_text(size=26, colour = "black"),
