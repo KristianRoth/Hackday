@@ -21,9 +21,20 @@ body {
 	height:70vh;
 }
 
-#botLeft, #botRight {
+#botLeft {
 	height:auto;
-	width:50%;
+	width:45%;
+	float:left;
+}
+#botRight {
+	margin-top: 40px;
+	height:auto;
+	width:49%;
+	float:right;
+}
+
+#teksti {
+	float:;
 }
 
 #detected {
