@@ -1,0 +1,39 @@
+.box {
+	background-color: black;
+	width: auto;
+	margin: 10px;
+}
+
+body {
+	background-color: black;
+	margin:10px;
+}
+
+#top {
+	width: 100%;
+	height: 28vh;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+#bottom {
+	width:100%;
+	height:70vh;
+}
+
+#botLeft, #botRight {
+	height:auto;
+	width:50%;
+}
+
+#detected {
+	margin-left: auto;
+    margin-right: auto;
+    width: 97%;
+}
+
+#kummitus1 {
+	width:80%;
+}
+
+
