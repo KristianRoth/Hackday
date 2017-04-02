@@ -33,6 +33,6 @@ p <- ggplot(RFIDplotData, aes(x=as.factor(time),fill=as.factor(1) )) +
         panel.grid.major.y=element_line(colour="black"))
 
 
-png("barPlot.png",bg = "transparent", type="cairo")
+png("/var/www/html/Hackday/Kuvaajat/barPlot.png",bg = "transparent", type="cairo")
 print(p)
 dev.off()

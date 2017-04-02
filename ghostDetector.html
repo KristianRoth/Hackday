@@ -31,12 +31,37 @@
 		    		</div>
 		    </div>
 
+		    
 		    <div class="" id="center">
 		    		<div class="greyBox" id="centercenter">
-		    			<img id="imgcenter" src="Kuvaajat/noghoststext.png" alt="LinePlot" height=100% width=100%/>
+
+		    			<script type="text/javascript">
+		    				var value=1;
+		    				var imgSource=document.getElementById("centercenter");
+		    				updatePage(value);
+		    				
+		    				function updatePage(value){
+		    					var x="";
+		    					if (value===0){
+		    						window.location="detected.html";
+		    						return;
+		    					}
+			    				if (value===1){
+			    					x="noghoststext.png";
+			    				}
+			    				if (value===2){
+			    					x="nosignal.png";
+			    				}
+			    				imgSource.innerHTML='<img id="imgcenter" src="Kuvaajat/'+x+'" alt="LinePlot" height=100% width=100%/>';
+			    				
+			    			}
+
+		    			</script>
+
 		    		</div>
 		    </div>
 
+		    
 		    <div id="right">
 		        	<div class="greyBox square" id="rightTop">
 			    		<img src="Kuvaajat/linePlot.png" alt="LinePlot" height=100% width=97%/>
