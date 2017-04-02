@@ -5,7 +5,15 @@
 </head>
 
 <script type=text/javascript>
+	var audio = new Audio('alert.wav');
 	setTimeout(switchPage,10000);
+	setInterval(loopSound,2500);
+	audio.play();
+
+	function loopSound(){
+		audio.play();
+	}
+
 	function switchPage(){
 		window.location="ghostDetector.html";
 	}
@@ -20,7 +28,9 @@
 		<div class="box" id="botLeft">
 			<img id="kummitus1" src="kuvat/kummitus1.gif" alt="Kummitus" width="100%" height="100%">
 		</div>
-		<div class="box" id="botRight"></div>
+		<div class="box" id="botRight">
+			<img id="teksti" src="kuvat/salaattilautanen.png" width=50% height=50%>
+		</div>
 	</div>
 </body>
 </html>
